@@ -1,0 +1,38 @@
+{
+  "speaker": {
+    "name": "DualShock 4 / DualSense (порядок величины)",
+    "radius_m": 0.009,
+    "x_max_m": 0.0003,
+    "f_resonance_hz": 500.0,
+    "spl_max_db": 88.0,
+    "orifice_radius_m": 0.006
+  },
+  "constants": {
+    "rho": 1.204,
+    "c": 343.0,
+    "nu": 1.5033222591362126e-05
+  },
+  "jet": {
+    "f_hz": 80.0,
+    "u0_peak_ms": 0.15079644737231004,
+    "M_N": 1.5482143370084139e-06,
+    "stroke_ratio": 0.049999999999999996,
+    "jet_forms": false,
+    "U0_jet_ms": 0.15079644737231004,
+    "d_breeze_cm": 0.5,
+    "d_percept_cm": 7.307692307692307,
+    "verdict": "PARTIAL"
+  },
+  "eckart": {
+    "f_hz": 1000.0,
+    "u_E_ms": 2.937526963131435e-10,
+    "alpha_Np_m": 1.8420446695832372e-05
+  },
+  "infrasound": {
+    "spl20_db": 32.220524345893224,
+    "spl40_db": 44.26166110999816,
+    "spl200_db": 72.22051019718228,
+    "threshold20_db": 94.07631009972843,
+    "deficit20_db": 61.85578575383521
+  }
+}
