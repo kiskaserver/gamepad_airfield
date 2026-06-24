@@ -1,5 +1,13 @@
 # gamepad_airfield
 
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-2.5-013243?logo=numpy&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-1.18-8CAAE6?logo=scipy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.11-11557C)
+![Physics](https://img.shields.io/badge/physics-acoustics%20%7C%20fluid%20dynamics-orange)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
+![Status](https://img.shields.io/badge/status-reproducible-success)
+
 Физическая симуляция «воздушных» эффектов микродинамика геймпада PS4/PS5
 (DualShock 4 / DualSense): ветерок, гидродинамическая струя, инфразвук/НЧ-гул.
 
