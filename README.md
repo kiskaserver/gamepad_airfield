@@ -1,5 +1,7 @@
 # gamepad_airfield
 
+[![reproduce](https://github.com/kiskaserver/gamepad_airfield/actions/workflows/ci.yml/badge.svg)](https://github.com/kiskaserver/gamepad_airfield/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/kiskaserver/gamepad_airfield?sort=semver)](https://github.com/kiskaserver/gamepad_airfield/releases)
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-2.5-013243?logo=numpy&logoColor=white)
 ![SciPy](https://img.shields.io/badge/SciPy-1.18-8CAAE6?logo=scipy&logoColor=white)
@@ -80,15 +82,35 @@ python -m venv .venv
 Результаты: консольный отчёт, графики `output/*.png` и числовая сводка
 `output/results.json`.
 
+Сборка PDF-отчёта (титул, аннотация, таблица, графики, литература):
+
+```powershell
+.\.venv\Scripts\python.exe report.py     # → output/report.pdf
+```
+
+📄 Готовый отчёт: [`output/report.pdf`](output/report.pdf).
+
+## Воспроизводимость
+
+- Точные версии окружения зафиксированы в [`requirements-lock.txt`](requirements-lock.txt).
+- CI ([GitHub Actions](.github/workflows/ci.yml)) на каждый push прогоняет
+  `simulate.py` и `report.py` на Python 3.11/3.12/3.13, проверяет наличие
+  выходных файлов и публикует графики и PDF как артефакты сборки.
+- Каждая версия результатов фиксируется
+  [релизом](https://github.com/kiskaserver/gamepad_airfield/releases) (semver).
+
 ## Структура
 
 | Файл | Назначение |
 |---|---|
 | `physics.py` | физическое ядро: акустика монополя, synthetic jet, streaming Эккарта, инфразвук |
 | `simulate.py` | прогон модели, отчёт, графики, `results.json` |
+| `report.py` | сборка академического PDF-отчёта (`output/report.pdf`) |
 | `THEORY.md` | подробный разбор и вердикт по каждому эффекту |
-| `output/` | графики (`*.png`) и числовая сводка (`results.json`) |
+| `output/` | графики (`*.png`), `results.json`, `report.pdf` |
 | `CITATION.cff` | метаданные для цитирования |
+| `requirements-lock.txt` | зафиксированное окружение для воспроизводимости |
+| `.github/workflows/ci.yml` | CI: автопрогон модели и отчёта |
 
 ## Ссылки
 
