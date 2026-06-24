@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Если вы используете эту работу, пожалуйста, цитируйте её следующим образом."
+title: "gamepad_airfield: физическая симуляция воздушных эффектов микродинамика геймпада PS4/PS5"
+abstract: >-
+  Воспроизводимая физическая модель, оценивающая возможность создания
+  ощутимого потока воздуха (synthetic jet), акустического streaming (Эккарт)
+  и инфразвука/низкочастотного гула встроенным микродинамиком геймпадов
+  DualShock 4 / DualSense. Модель строится от механического предела
+  излучателя (ограничение по ходу диафрагмы) и даёт честную количественную
+  оценку каждого эффекта.
+authors:
+  - family-names: "Vinnik"
+    given-names: "Nikita"
+    alias: "kiskaserver"
+type: software
+license: MIT
+version: "1.0.0"
+date-released: "2026-06-24"
+url: "https://github.com/kiskaserver/gamepad_airfield"
+keywords:
+  - acoustics
+  - fluid-dynamics
+  - synthetic-jet
+  - acoustic-streaming
+  - infrasound
+  - haptics
+  - dualsense
+  - dualshock
