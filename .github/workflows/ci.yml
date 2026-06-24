@@ -1,0 +1,50 @@
+name: reproduce
+
+# Проверка воспроизводимости: на каждый push/PR прогоняем модель и отчёт,
+# затем сохраняем графики и PDF как артефакты сборки.
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run simulation
+        run: python simulate.py
+
+      - name: Generate PDF report
+        run: python report.py
+
+      - name: Sanity check (outputs exist)
+        run: |
+          test -f output/results.json
+          test -f output/fig1_jet_velocity.png
+          test -f output/fig2_spl_response.png
+          test -f output/fig3_jet_field.png
+          test -f output/report.pdf
+
+      - name: Upload artifacts
+        if: matrix.python-version == '3.13'
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulation-outputs
+          path: output/
